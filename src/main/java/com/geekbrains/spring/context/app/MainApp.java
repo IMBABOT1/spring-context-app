@@ -11,11 +11,17 @@ public class MainApp {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        ProductService productService = context.getBean("productService", ProductService.class);
         Cart cart = context.getBean("cart", Cart.class);
 
         cart.add(1);
         cart.add(2);
+        cart.add(4);
+
+        cart.delete(4);
+
+
+
+
 
         System.out.println(cart);
     }
