@@ -29,6 +29,7 @@ public class MainApp {
         while (!s.equals("/end")){
         s = scanner.nextLine();
 
+        System.out.println(s);
         while (!next.equals("/end")) {
             if (s.equals(add + " " + "1")) {
                 cart.add(1);
@@ -81,6 +82,8 @@ public class MainApp {
                 break;
             } else if (s.equals("/end")) {
                 break;
+            }else {
+                throw new RuntimeException("Cart is empty");
             }
         }
 

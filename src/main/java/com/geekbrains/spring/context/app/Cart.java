@@ -38,11 +38,15 @@ public class Cart implements CartRepository  {
 
     @Override
     public void delete(int id) {
-        Iterator<Product> iterator = list.iterator();
-        while (iterator.hasNext()){
-            Product e = iterator.next();
-            if (e.getId() == id){
-                iterator.remove();
+        int count = 0;
+        for (int i = 0; i <list.size() ; i++) {
+            if (list.get(i).getId() == id){
+                list.remove(productRepository.findProduct(id));
+                count++;
+                if (count == 1){
+                    break;
+                }
+                i++;
             }
         }
     }
