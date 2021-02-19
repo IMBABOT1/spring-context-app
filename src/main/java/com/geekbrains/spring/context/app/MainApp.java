@@ -13,7 +13,15 @@ public class MainApp {
     private static String delete = "/dell";
 
     public static void main(String[] args) {
-        shop();
+       // shop();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Cart cart = context.getBean("cart", Cart.class);
+
+        cart.add(1);
+        cart.add(2);
+        cart.add(3);
+
+        System.out.println(cart.findAll());
     }
 
     private static void shop(){

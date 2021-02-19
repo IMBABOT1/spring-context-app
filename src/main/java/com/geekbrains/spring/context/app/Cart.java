@@ -31,6 +31,10 @@ public class Cart implements CartRepository  {
        return sb.toString();
     }
 
+    public List findAll(){
+        return list;
+    }
+
     @Override
     public void add(int id) {
         list.add(productRepository.findProduct(id));
