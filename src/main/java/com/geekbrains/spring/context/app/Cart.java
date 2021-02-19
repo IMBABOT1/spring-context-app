@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class Cart implements CartRepository  {
     }
 
     public List findAll(){
-        return list;
+        return Collections.unmodifiableList(list);
     }
 
     @Override
